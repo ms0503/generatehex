@@ -12,7 +12,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         process::exit(1);
     }
     let cols = args[1].parse::<u32>();
-    if let Err(_) = cols {
+    if cols.is_err() {
         eprintln!("Error: {} is invalid number.", args[1]);
         process::exit(1);
     }
